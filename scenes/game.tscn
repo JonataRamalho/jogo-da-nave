@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://baxth8x22o4hg"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_30ggs"]
+
+[node name="Game" type="Node2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_30ggs")
