@@ -14,3 +14,6 @@ texture = ExtResource("2_fda1s")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-26, 24, -39, 5, -39, 3, -33, 0, -32, 1, -10, -11, -10, -12, -8, -14, -3, -26, 3, -26, 7, -14, 10, -12, 32, 1, 32, 0, 39, 3, 39, 5, 27, 24, 25, 24, 12, 21, 9, 26, -9, 26, -12, 21, -24, 24)
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(0, -38)
