@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_30ggs"]
 [ext_resource type="PackedScene" uid="uid://b1m4lde8fdoo7" path="res://scenes/player.tscn" id="2_xlwcg"]
-[ext_resource type="PackedScene" uid="uid://cfqtvvnxebhul" path="res://scenes/laser.tscn" id="3_eg7rg"]
+[ext_resource type="PackedScene" uid="uid://nivp3o5ndji0" path="res://scenes/enemy.tscn" id="4_78iys"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(-1, 0)
@@ -14,7 +14,7 @@ position = Vector2(266, 878)
 [node name="PlayerSpawnPosition" type="Marker2D" parent="."]
 position = Vector2(266, 878)
 
-[node name="Laser" parent="." instance=ExtResource("3_eg7rg")]
-position = Vector2(86, 921)
-
 [node name="LaserContainer" type="Node2D" parent="."]
+
+[node name="Enemy" parent="." instance=ExtResource("4_78iys")]
+position = Vector2(216, 239)
