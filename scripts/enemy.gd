@@ -1,6 +1,7 @@
 class_name Enemy extends Area2D
 
 signal killed(points)
+signal hit
 
 @export var agility = 150
 @export var hp = 1
@@ -11,7 +12,6 @@ func _physics_process(delta):
 
 func die():
 	queue_free()
-
 
 func _on_body_entered(body):
 	if body is Player:
@@ -27,3 +27,5 @@ func take_damage(hits):
 	if hp <= 0:
 		killed.emit(points)
 		die()
+	else:
+		hit.emit()
