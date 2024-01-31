@@ -1,11 +1,15 @@
 extends Node2D
 
 @export var enemy_scenes: Array[PackedScene] = []
+@export var enemy_follow_scenes: Array[PackedScene] = []
+
 
 @onready var player_spawn_position = $PlayerSpawnPosition
 @onready var laser_container = $LaserContainer
 @onready var timer = $EnemySpawnTimer
+@onready var timerFollow = $EnemyFollowSpawnTimer
 @onready var enemy_container = $EnemyContainer
+@onready var enemy_follow_container = $EnemyFollowContainer
 @onready var hud = $UILayer/HUD
 @onready var gos = $UILayer/GameOverScreen
 @onready var pb = $ParallaxBackground
@@ -86,3 +90,10 @@ func _on_player_killed():
 
 func _on_enemy_hit():
 	hit_sound.play()
+
+func _on_enemy_follow_spawn_timer_timeout():
+	var e = enemy_follow_scenes.pick_random().instantiate()
+	e.global_position = Vector2(randf_range(50, 500), -50)
+	e.killed.connect(_on_enemy_killed)
+	e.hit.connect(_on_enemy_hit)
+	enemy_follow_container.add_child(e)
